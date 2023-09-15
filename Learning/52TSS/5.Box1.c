@@ -1,25 +1,28 @@
 #include<stdio.h>
 int main()
 {
-    int j,k;
-    
-    scanf("%d",&j);
-
-    for(int i=1;i<=j;i++)
+    int n;
+    scanf("%d",&n);
+    int i,j,k;
+    for(i=1; i<=n; i++)
     {
-        scanf("%d",&k);
-
-        for(int n=1;n<=k;n++)
+        int num;
+        scanf("%d",&num);
+        for(j=0; j<num; j++)
         {
-            for(int m=1;m<=k;m++)
-        {
-            printf("*");
-            if(m==k){
-                printf("\n");
+            for(k=0; k<num; k++){
+                printf("*");
             }
+            printf("\n");
         }
+        if(i!=n)
+        {
+            printf("\n");
         }
-        printf("\n");
+
     }
+
+
     return 0;
 }
+
