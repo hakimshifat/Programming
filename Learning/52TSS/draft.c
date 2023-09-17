@@ -3,14 +3,11 @@ int main()
 {
     int i,j,k;
     scanf("%d",&j);
-    for(i=j;i>=1;i--){
-        if((j%i)==0){
-            k=j/i;
-            printf("%d ",k);
-        }
-        else{
-            continue;;
-        }
+    for(i=0;i<j;i++){
+        scanf("%d",&k);
+        int m=k%10;
+        int n=k/10000;
+        printf("Sum = %d\n",m+n);
     }
     return 0;
 }
