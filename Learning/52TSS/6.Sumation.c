@@ -8,7 +8,7 @@ int main()
         int m=k%10;
         int n=k/10000;
         printf("Sum = %d\n",m+n);
-        // this works
+        // this
     }
     return 0;
 }
