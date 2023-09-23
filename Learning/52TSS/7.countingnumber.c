@@ -1,20 +1,16 @@
 #include<stdio.h>
-#include<stdlib.h>
 int main()
 {
-    char line[]
-    scanf(" %[^\n,line]");
-    char *p, *e;
-    long input;
-    int count=0;
-    int p = line;
-    for (p = line ; ; p = e){
-        input= strtol(p,&e,10);
-        if(p==e){
-            break;
-        }
-        count++;
+    int j,m;
+    char n[10000];
+    char n1[10000];
+    scanf("%d",&j);
+    for(int i=0;i<j;i++){
+        //scanf("%d",n[i]);
+        scanf("%s",&n);
+        printf("5th item of it= %s\n",n);
+        scanf("%s",&n1);
+        printf("5th item of it= %s\n",n1);
     }
-    printf("%d\n",count);
     return 0;
 }
