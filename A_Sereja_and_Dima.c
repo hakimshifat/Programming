@@ -1,26 +1,45 @@
 #include<stdio.h>
 
-int main(){
-    int i;
-    scanf("%d",&i);
-    int cards[i],temp[i],temp1[i];
-    for(int j=0;j<i;j++){
-        scanf("%d",&cards[j]);
+int main()
+{
+    int j,sum=0,sum1=0;
+    scanf("%d",&j);
+    int cards[j];
+    for(int i=1;i<=j;i++){
+        scanf("%d",&cards[i]);
     }
-    for(int k=0;k<i;k++){
-        if(cards[k]>cards[i-k-1]){
-            temp[k]=cards[k];
-            temp1[k]=cards[i-k-1];
+    for(int m=1;m<=(j/2);m++){
+    if(((m+1)%2)==0){
+        if(cards[m]>cards[j]){
+          //  temp[m]=cards[m];
+          sum = sum + cards[m];
+          sum1 = sum1 + cards[j];
+            //temp1[m]=cards[j];
         }
         else{
-            temp[k]=cards[i-k-1];
-            temp1[k]=cards[k];
+           sum = sum + cards[j];
+          sum1 = sum1 + cards[m];
+           // temp[m]=cards[j];
+           // temp1[m]=cards[m];
         }
-        }
-
-    for(int n=0;n<i;n++){
-    printf("%d %d\n",temp[n]+temp[n+1],temp1[n]+temp1[n+1]);
-    break;
     }
+    else{
+        if(cards[m]>cards[j]){
+          sum1 = sum1 + cards[m];
+          sum = sum + cards[j];
+          //  temp[m]=cards[m];
+           // temp1[m]=cards[j];
+        }
+        else{
+        sum1 = sum1 + cards[j];
+          sum = sum + cards[m];
+          //  temp[m]=cards[j];
+           // temp1[m]=cards[m];
+        }
+    } 
+    }
+    
+    printf("%d %d",sum1,sum);
+
     return 0;
 }
