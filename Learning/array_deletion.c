@@ -39,6 +39,7 @@ int main()
 */
 
     delete_element(array,N,k);
+    N--;
     printf("Content of the array after deleting:");
     printarray(array,N);
 

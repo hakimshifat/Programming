@@ -30,14 +30,16 @@ int main()
     scanf("%d",&P);
     printf("\nIndex where the element should be inserted:");
     scanf("%d",&k);
-
+/*
     for(i=N;i>=k;i--){
         array[i+1]=array[i];
     }
     array[k]=P;
     N++; 
+    */
 
- //   insert_element(array,N,P,k);
+    insert_element(array,N,P,k);
+    N++;
 
         printf("Content of the array after inserting:");
     printarray(array,N);
