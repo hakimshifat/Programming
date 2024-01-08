@@ -39,7 +39,7 @@ int main()
     }
 
     int value;
-    printf("\nEnter the value to be inserted:");
+    printf("\nEnter the value to be inserted at end of the list:");
     scanf("%d", &value);
     NODE *ptr = (NODE *)malloc(sizeof(NODE));
     ptr->INFO = value;

@@ -1,17 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve()
-{
-    /*code here*/
-}
 int main()
 {
-    int t = 0;
-    cin >> t;
-    while (t--)
-    {
-        solve();
+    char s[100];
+    vector<int>m;
+    cin>>s;
+    for(int i=0;i<100;i+2){
+        m.push_back(s[i]);
     }
+   // sort(m.begin(),m.end());
+    cout<<m.at(1)<<endl;
     return 0;
 }
