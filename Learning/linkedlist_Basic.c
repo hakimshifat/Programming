@@ -26,6 +26,9 @@ int main()
     b->NEXT = c;
     c->NEXT = NULL;
 
+    NODE Head = *a;
+    NODE last = *c;
+
     while (a != NULL)
     {
         printf("%d ->", a->INFO);
