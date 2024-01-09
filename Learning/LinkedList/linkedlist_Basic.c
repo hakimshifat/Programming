@@ -10,6 +10,7 @@ int main()
         struct node *NEXT;
     };
     typedef struct node NODE;
+    
     NODE *a = NULL;
     NODE *b = NULL;
     NODE *c = NULL;
