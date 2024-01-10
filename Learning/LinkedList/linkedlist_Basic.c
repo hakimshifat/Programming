@@ -10,7 +10,7 @@ int main()
         struct node *NEXT;
     };
     typedef struct node NODE;
-    
+
     NODE *a = NULL;
     NODE *b = NULL;
     NODE *c = NULL;
@@ -33,7 +33,7 @@ int main()
     while (a != NULL)
     {
         printf("%d ->", a->INFO);
-            a = a->NEXT;
+        a = a->NEXT;
     }
 
     return 0;
