@@ -2,6 +2,7 @@
 int main()
 {
     int i, j, k;
+    printf("How many time you want the programme to run:");
     scanf("%d", &j);
     for (i = 1; i <= j; i++)
     {
