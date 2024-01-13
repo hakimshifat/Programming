@@ -12,7 +12,7 @@ typedef struct Node node;
 void print(node *head,node *last);
 node* insert_start(int value, node *first);
 void insert_middle(int value, int index, node *first, node *last);
-void insert_end(int value,node *first, node *last);
+node* insert_end(int value,node *first, node *last);
 node* search_LL(int value, node *first, node *last);
 node* delete_LL(int value, node *first);
 
@@ -87,7 +87,7 @@ int main()
                     cout<<"choice:";
                     int insert;
                     cin >> insert;
-                    insert_end(insert,first,last);
+                    last = insert_end(insert,first,last);
                     break;
 
                 }
@@ -169,20 +169,19 @@ void insert_middle(int value, int index, node *first, node *last){
         temp = temp->next;
     }
 }
-void insert_end(int value,node *first, node *last){
-    node *temp = first;
+node* insert_end(int value,node *first, node *last){
     node *newend = (node*)malloc(sizeof(node));
     newend->info = value;
-  //  newend->next = first;
     if(first == NULL){
-        first = newend;
+        first = last = newend;
+        newend->next = first;
     }
     else{
-    last->next= newend;
-    newend->next=first;
+    last->next = newend;
+    newend->next = first;
     last = newend;
-    }
-    
+    return last;
+    }   
 }
 node *search_LL(int value, node *first, node *last){
     node *temp = first;
