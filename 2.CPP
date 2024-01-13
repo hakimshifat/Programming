@@ -9,11 +9,11 @@ struct Node
 
 typedef struct Node node;
 
-void print(node *head);
+void print(node *head,node *last);
 node* insert_start(int value, node *first);
-void insert_middle(int value, int index, node *first);
-void insert_end(int value,node *first);
-int search_LL(int value, node *first);
+void insert_middle(int value, int index, node *first, node *last);
+void insert_end(int value,node *first, node *last);
+node* search_LL(int value, node *first, node *last);
 node* delete_LL(int value, node *first);
 
 int main()
@@ -29,23 +29,25 @@ int main()
 
     a->next = b;
     b->next = c;
-    c->next = NULL;
+    c->next = a;
 
     node *first = a;
     node *last = c;
 
-    cout<<"The Linked list before Operation\n";
+    cout<<"The Circuller Linked list before Operation\n";
     
 
     while(1){
-    print(first);
+    cout<<"\n";
+    print(first,last);
+    cout<<"\n";
     cout<<"\n1 - Print\n2 - Insert\n3 - Delete\n4 - Search\n5 - Exit\nChoice:";
     int choice;
     cin >> choice;
 
     switch(choice){
         case 1:{
-         print(first);
+         print(first,last);
          break;
         }
         case 2:{
@@ -74,7 +76,7 @@ int main()
                     cout<<"Enter the index number where you want to insert the value(excluding first and last)";
                     int index;
                     cin >> index;
-                    insert_middle(insert,index,first);
+                    insert_middle(insert,index,first,last);
                     cout<<"\n";
                   //  print(first);
                     break;
@@ -85,7 +87,7 @@ int main()
                     cout<<"choice:";
                     int insert;
                     cin >> insert;
-                    insert_end(insert,first);
+                    insert_end(insert,first,last);
                     break;
 
                 }
@@ -107,14 +109,14 @@ int main()
                 cout<<"choice:";
                 int search;
                 cin >> search;
-                int index = search_LL(search,first);
-                if(index>0){
-                    cout<<"Match found. It is in "<<index<<"th location";
+                node *index = search_LL(search,first,last);
+                if(index==NULL){
+                    cout<<"Not found\n";
                 }
                 else{
-                    cout<<"\nNot found in the list";
+                    cout<<"Found. It is located before"<<index->next->info<<"in the list\n";
                 }
-        break;
+                break;
         }
         case 5:{
             //exit
@@ -128,13 +130,22 @@ int main()
     }
     return 0;
 }
-void print(node *head){
-    node *temp = head;
-    while(temp != NULL){
-        cout<<temp->info<<"->";
-        temp = temp->next;
+void print(node *head,node *last){
+    node *temp;
+    if(head == NULL){
+        cout<<"\nEmpty List";
     }
-    cout<<"END";
+    else if(head == last){
+        cout<<head->info;
+    }
+    else{
+        for(temp = head;temp!=last;temp = temp->next){
+            cout<<temp->info<<"->"<<" ";
+        }
+        cout<<last->info;
+    }
+    cout<<" ->END";
+    cout<<"\n";
 }
 node* insert_start(int value, node *first){
    // node *temp = first;
@@ -144,10 +155,10 @@ node* insert_start(int value, node *first){
     return temp1;
 }
 
-void insert_middle(int value, int index, node *first){
+void insert_middle(int value, int index, node *first, node *last){
     node *temp = first;
     int count = 0;
-    while(temp != NULL){
+    while(temp != last){
         count++;
         if(count == index){
             node *newnode = (node*)malloc(sizeof(node));
@@ -158,40 +169,41 @@ void insert_middle(int value, int index, node *first){
         temp = temp->next;
     }
 }
-void insert_end(int value,node *first){
+void insert_end(int value,node *first, node *last){
     node *temp = first;
     node *newend = (node*)malloc(sizeof(node));
     newend->info = value;
-    newend->next=NULL;
+  //  newend->next = first;
     if(first == NULL){
         first = newend;
     }
     else{
-
-    while(temp->next != NULL){
-        temp = temp->next;
-    }
-    
-    temp->next = newend;
+    last->next= newend;
+    newend->next=first;
+    last = newend;
     }
     
 }
-int search_LL(int value, node *first){
-    int count = 0;
+node *search_LL(int value, node *first, node *last){
     node *temp = first;
-    while(temp != NULL){
-        count++;
+    if(first == NULL){
+        cout<<"Empty list";
+    }
+    else if((first == last)&&(first->info==value)){
+        return first;
+    }
+    while(temp != last){
         if(temp->info == value){
+            return temp;
             break;
         }
         temp = temp->next;
-    }
-    if(temp = NULL){
-        return 0;
-    }
-    else{
-        return count;
-
+        if(last->info==value){
+            return last;
+        }
+        else{
+            return NULL;
+        }
     }
 }
 node* delete_LL(int value, node *first){
