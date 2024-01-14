@@ -5,11 +5,13 @@ struct Node
 {
     int info;
     struct Node *next;
+    struct Node *prev; //this is what makes it different from normal lined list
 };
 
 typedef struct Node node;
 
-void print(node *head,node *last);
+void print_forward(node *first,node *last);
+void print_reverse(node *first,node *last);
 node* insert_start(int value, node *first);
 void insert_middle(int value, int index, node *first, node *last);
 node* insert_end(int value,node *first, node *last);
@@ -28,18 +30,21 @@ int main()
     c->info = 30;
 
     a->next = b;
+    a->prev = NULL;
     b->next = c;
-    c->next = a;
+    b->prev = a;
+    c->next = NULL;
+    c->prev = b;
 
     node *first = a;
     node *last = c;
 
-    cout<<"The Circuller Linked list before Operation\n";
+    cout<<"The Double Linked list before Operation\n";
     
 
     while(1){
     cout<<"\n";
-    print(first,last);
+    print_forward(first,last);
     cout<<"\n";
     cout<<"\n1 - Print\n2 - Insert\n3 - Delete\n4 - Search\n5 - Exit\nChoice:";
     int choice;
@@ -47,8 +52,21 @@ int main()
 
     switch(choice){
         case 1:{
-         print(first,last);
-         break;
+            cout<<"1.Forward\n2.Reverse";
+            cout<<"\nChoice:";
+            int choice;
+            cin >> choice;
+            switch(choice){
+                case 1:{
+                    print_forward(first,last);
+                    break;
+                }
+                case 2:{
+                    print_reverse(first,last);
+                    break;
+                }
+            }
+            break;
         }
         case 2:{
             cout<<"\nWhere do you want to insert the number?";
@@ -64,7 +82,6 @@ int main()
                     cin >> insert;
                     node *newhead = insert_start(insert, first);
                     cout<<"after inserting the value\n";
-                   // print(newhead);
                    first = newhead;
                     break;
                 }
@@ -78,7 +95,6 @@ int main()
                     cin >> index;
                     insert_middle(insert,index,first,last);
                     cout<<"\n";
-                  //  print(first);
                     break;
                     
                 }
@@ -129,16 +145,16 @@ int main()
     }
     return 0;
 }
-void print(node *head,node *last){
+void print_forward(node *first,node *last){
     node *temp;
-    if(head == NULL){
+    if(first == NULL){
         cout<<"\nEmpty List";
     }
-    else if(head == last){
-        cout<<head->info;
+    else if(first == last){
+        cout<<first->info;
     }
     else{
-        for(temp = head;temp!=last;temp = temp->next){
+        for(temp = first;temp!=last;temp = temp->next){
             cout<<temp->info<<"->"<<" ";
         }
         cout<<last->info;
@@ -146,6 +162,25 @@ void print(node *head,node *last){
     cout<<" ->END";
     cout<<"\n";
 }
+void print_reverse(node *first, node *last){
+    node *temp;
+    if(first == NULL){
+        cout<<"\nEmpty List";
+    }
+    else if(first == last){
+        cout<<first->info;
+    }
+    else{
+        for(temp = last;temp!=first;temp = temp->prev){
+            cout<<temp->info<<"->"<<" ";
+        }
+        cout<<first->info;
+    }
+    cout<<" ->END";
+    cout<<"\n";
+
+}
+
 node* insert_start(int value, node *first){
    // node *temp = first;
     node *temp1 =(node*)malloc(sizeof(node));

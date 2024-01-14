@@ -39,6 +39,7 @@ int main()
 
     while(1){
     print(first);
+    cout <<"\n";
     cout<<"\n1 - Print\n2 - Insert\n3 - Delete\n4 - Search\n5 - Exit\nChoice:";
     int choice;
     cin >> choice;
@@ -117,7 +118,6 @@ int main()
         break;
         }
         case 5:{
-            //exit
             exit(1);
             break;
         }
@@ -179,6 +179,9 @@ void insert_end(int value,node *first){
 int search_LL(int value, node *first){
     int count = 0;
     node *temp = first;
+    if (first ==NULL){
+        cout<<"\nEmpty List";
+    }
     while(temp != NULL){
         count++;
         if(temp->info == value){
