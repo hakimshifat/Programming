@@ -90,7 +90,7 @@ int main()
                     cout<<"choice:";
                     int insert;
                     cin >> insert;
-                    cout<<"Enter the index number where you want to insert the value(excluding first and last)";
+                    cout<<"Enter the index number where you want to insert the value(excluding first(0) and last)\n";
                     int index;
                     cin >> index;
                     insert_middle(insert,index,first,last);
@@ -129,7 +129,7 @@ int main()
                     cout<<"Not found\n";
                 }
                 else{
-                    cout<<"Found. It is located before"<<index->next->info<<" in the list\n";
+                    cout<<"Found. It is located before "<<index->next->info<<" in the list\n";
                 }
                 break;
         }
@@ -186,6 +186,8 @@ node* insert_start(int value, node *first){
     node *temp1 =(node*)malloc(sizeof(node));
     temp1->info = value;
     temp1->next = first;
+    temp1->prev = NULL;
+    first->prev = temp1;
     return temp1;
 }
 
@@ -212,7 +214,8 @@ node* insert_end(int value,node *first, node *last){
     }
     else{
     last->next = newend;
-    newend->next = first;
+    newend->next = NULL;
+    newend->prev = last;
     last = newend;
     return last;
     }   
@@ -233,7 +236,7 @@ node *search_LL(int value, node *first, node *last){
         temp = temp->next;
         
     }
-    if(last->info==value){
+    if(last->info == value){
             return last;
         }
         else{
