@@ -123,13 +123,19 @@ int main()
             cout<<"Enter the number you want to search\n";
                 cout<<"choice:";
                 int search;
-                cin >> search;
+                scanf("%d", &search);
                 node *index = search_LL(search,first,last);
                 if(index==NULL){
                     cout<<"Not found\n";
                 }
+                else if(index == last){
+                    cout<<"Its the last element of the list";
+                }
+                else if(index == first){
+                    cout<<"Its the first element of the list";
+                }
                 else{
-                    cout<<"Found. It is located before "<<index->next->info<<" in the list\n";
+                    cout<<"Found. It is located before "<<index->next->info<<" and after "<<index->prev->info<<"  in the list\n";
                 }
                 break;
         }
