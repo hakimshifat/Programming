@@ -14,7 +14,7 @@ node* insert_start(int value, node *first);
 void insert_middle(int value, int index, node *first, node *last);
 node* insert_end(int value,node *first, node *last);
 node* search_LL(int value, node *first, node *last);
-node* delete_LL(int value, node *first);
+node* delete_LL(int value, node *first, node *last);
 
 int main()
 {
@@ -99,7 +99,7 @@ int main()
                 cout<<":";
                 int deleteL1;
                 cin >> deleteL1;
-                first = delete_LL(deleteL1, first);
+                first = delete_LL(deleteL1, first, last);
                 break;
 
         }
@@ -205,11 +205,12 @@ node *search_LL(int value, node *first, node *last){
             return NULL;
         }
 }
-node* delete_LL(int value, node *first){
+node* delete_LL(int value, node *first, node *last){
     node *newHead = (node*)malloc(sizeof(node));
     newHead->next = first;
     node *temp = newHead;
-    while (temp->next != NULL){   
+    
+    while (temp->next != last){   
         if(temp->next->info == value){
             temp->next = temp->next->next;
             break;
@@ -217,6 +218,9 @@ node* delete_LL(int value, node *first){
         else{
             temp = temp->next;
         }
+    }
+    if(last->info == value){
+        last = temp;
     }
     return newHead->next;  
 }

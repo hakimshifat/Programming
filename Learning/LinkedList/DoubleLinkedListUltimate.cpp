@@ -206,6 +206,7 @@ void insert_middle(int value, int index, node *first, node *last){
             node *newnode = (node*)malloc(sizeof(node));
             newnode->info=value;
             newnode->next=temp->next;
+            newnode->prev=temp->prev;
             temp->next = newnode;
         }
         temp = temp->next;
@@ -252,8 +253,9 @@ node *search_LL(int value, node *first, node *last){
 node* delete_LL(int value, node *first){
     node *newHead = (node*)malloc(sizeof(node));
     newHead->next = first;
+    newHead->prev = NULL;
     node *temp = newHead;
-    while (temp->next != NULL){   
+    while(temp->next != NULL){
         if(temp->next->info == value){
             temp->next = temp->next->next;
             break;
@@ -262,5 +264,9 @@ node* delete_LL(int value, node *first){
             temp = temp->next;
         }
     }
+    if(temp->info == value){
+        temp=NULL;
+    }
+        
     return newHead->next;  
 }
