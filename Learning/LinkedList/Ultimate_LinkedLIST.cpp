@@ -13,8 +13,8 @@ void print(node *head);
 node* insert_start(int value, node *first);
 void insert_middle(int value, int index, node *first);
 void insert_end(int value,node *first);
-int search_LL(int value, node *first);
 node* delete_LL(int value, node *first);
+node* search_LLL(int value, node *first);
 
 int main()
 {
@@ -32,15 +32,14 @@ int main()
     c->next = NULL;
 
     node *first = a;
-    node *last = c;
 
     cout<<"The Linked list before Operation\n";
     
 
     while(1){
-    print(first);
+  //  print(first);
     cout <<"\n";
-    cout<<"\n1 - Print\n2 - Insert\n3 - Delete\n4 - Search\n5 - Exit\nChoice:";
+    cout<<"\n[1] - Print\n[2] - Insert\n[3] - Delete\n[4] - Search\n[5] - Exit\nChoice:";
     int choice;
     cin >> choice;
 
@@ -51,7 +50,7 @@ int main()
         }
         case 2:{
             cout<<"\nWhere do you want to insert the number?";
-            cout<<"\n1.At Start\n2.At Middle\n3.At end\n";
+            cout<<"\n[1].At Start\n[2].At Middle\n[3].At end\n";
             cout<<"choice:";
             int choice1;
             cin>>choice1;
@@ -72,12 +71,13 @@ int main()
                     cout<<"choice:";
                     int insert;
                     cin >> insert;
-                    cout<<"Enter the index number where you want to insert the value(excluding first and last)";
+                    print(first);
+                    cout<<"\nEnter the index number where you want to insert the value(excluding first[0] and last)";
+                    cout<<"\nChoice:";
                     int index;
                     cin >> index;
                     insert_middle(insert,index,first);
                     cout<<"\n";
-                  //  print(first);
                     break;
                     
                 }
@@ -98,7 +98,6 @@ int main()
                 cout<<":";
                 int deleteL1;
                 cin >> deleteL1;
-               // first = delete_LL(deleteL1,first);
                 first = delete_LL(deleteL1, first);
                 break;
 
@@ -108,13 +107,19 @@ int main()
                 cout<<"choice:";
                 int search;
                 cin >> search;
-                int index = search_LL(search,first);
-                if(index>0){
-                    cout<<"Match found. It is in "<<index<<"th location";
+                node *searching = search_LLL(search,first);
+                if(searching == NULL){
+                    cout<<"Not found";
+                }
+                else if(searching == first){
+                    cout<<"First element";
                 }
                 else{
-                    cout<<"\nNot found in the list";
+                    cout<<"Found";
+                    cout<<"Its located.";
+                    (searching->next==NULL)? cout<<"Its the Last element " : cout<<"Element before"<<searching->next->info<<" In the list";
                 }
+
         break;
         }
         case 5:{
@@ -176,31 +181,11 @@ void insert_end(int value,node *first){
     }
     
 }
-int search_LL(int value, node *first){
-    int count = 0;
-    node *temp = first;
-    if (first ==NULL){
-        cout<<"\nEmpty List";
-    }
-    while(temp != NULL){
-        count++;
-        if(temp->info == value){
-            break;
-        }
-        temp = temp->next;
-    }
-    if(temp = NULL){
-        return 0;
-    }
-    else{
-        return count;
-
-    }
-}
 node* delete_LL(int value, node *first){
     node *newHead = (node*)malloc(sizeof(node));
     newHead->next = first;
     node *temp = newHead;
+    
     while (temp->next != NULL){   
         if(temp->next->info == value){
             temp->next = temp->next->next;
@@ -211,4 +196,21 @@ node* delete_LL(int value, node *first){
         }
     }
     return newHead->next;  
+}
+node* search_LLL(int value, node *first){
+    node *temp = first;
+    while(temp->next != NULL){
+        if(temp->info == value){
+            return temp;
+        }
+        else{
+            temp = temp->next;
+        }
+    }
+    if(temp->info == value){
+        return temp;
+    }
+    else{
+        return NULL;
+    }
 }

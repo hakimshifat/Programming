@@ -41,7 +41,7 @@ int main()
     cout<<"\n";
     print(first,last);
     cout<<"\n";
-    cout<<"\n1 - Print\n2 - Insert\n3 - Delete\n4 - Search\n5 - Exit\nChoice:";
+    cout<<"\n[1] - Print\n[2] - Insert\n[3] - Delete\n[4] - Search\n[5] - Exit\nChoice:";
     int choice;
     cin >> choice;
 
@@ -52,7 +52,7 @@ int main()
         }
         case 2:{
             cout<<"\nWhere do you want to insert the number?";
-            cout<<"\n1.At Start\n2.At Middle\n3.At end\n";
+            cout<<"\n[1].At Start\n[2].At Middle\n[3].At end\n";
             cout<<"choice:";
             int choice1;
             cin>>choice1;
@@ -64,7 +64,6 @@ int main()
                     cin >> insert;
                     node *newhead = insert_start(insert, first);
                     cout<<"after inserting the value\n";
-                   // print(newhead);
                    first = newhead;
                     break;
                 }
@@ -78,7 +77,6 @@ int main()
                     cin >> index;
                     insert_middle(insert,index,first,last);
                     cout<<"\n";
-                  //  print(first);
                     break;
                     
                 }
@@ -124,6 +122,7 @@ int main()
         }
         default:{
             cout<<"\nInvalid choice";
+            break;
         }
     }
     }
