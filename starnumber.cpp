@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -20,8 +20,7 @@ int main()
                 cout << n;
             }
         }
-        else
-        {
+        else{
             cout << i; // in each line star at start and end position
             for (j = 1; j <= 2 * i - 3; j++)
             { // print space to make hollow
