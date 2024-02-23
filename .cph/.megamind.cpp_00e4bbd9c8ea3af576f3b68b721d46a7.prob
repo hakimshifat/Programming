@@ -1,0 +1,1 @@
+{"name":"Local: megamind","url":"/common/Programming/megamind.cpp","tests":[{"id":1708147826438,"input":"4\n12 4 3 2\n9 4 2 7\n13 4 3 1\n13 4 3 50","output":"Case 1: 3\nCase 2: 4\nCase 3: 4\nCase 4: -1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/common/Programming/megamind.cpp","group":"local","local":true}

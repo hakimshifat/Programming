@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"/common/Programming/E.cpp","tests":[{"id":1708142888778,"input":"4\n29 2 1888 1910\n29 2 1988 2010\n1 1 1988 2010\n31 12 1988 2010","output":"Case 1: 4\nCase 2: 5\nCase 3: 22\nCase 4: 22"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/common/Programming/E.cpp","group":"local","local":true}
