@@ -1,44 +1,76 @@
-#include<stdio.h>
-int main()
-{
-    return 0;
-}
+// #include <stdio.h>
 
-//LAB-2
-// #include<stdio.h>
-// int main()
-// {   
-//     char c;
-//     printf("Enter alphabet: ");
-//     scanf("%c",&c);
-//     switch(c){
-//         case 'a':{
-//             printf("Vowel\n");
-//             break;
-//         }
-//             case 'e':{
-//             printf("Vowel\n");
-//             break;
-//         }
-//                 case 'i':{
-//             printf("Vowel\n");
-//             break;
-//         }
-//                 case 'o':{
-//             printf("Vowel\n");
-//             break;
-//         }
-//                 case 'u':{
-//             printf("Vowel\n");
-//             break;
-//         }
-//         default:{
-//             printf("Consonant\n");
-//             break;
-//         }
+// int main() {
+//     int n;
+//     printf("Enter the number of terms: ");
+//     scanf("%d", &n);
+
+//     int sum = 0;
+//     int term = 0;
+//     for (int i = 0; i < n; ++i) {
+//         term = term * 10 + 1; // Generating the next term in the series
+//         sum += term; // Adding the term to the sum
 //     }
+
+//     printf("The sum of the series is: %d\n", sum);
+
 //     return 0;
 // }
+
+// #include <stdio.h>
+// int main()
+// {
+//     int num = 26;
+//     if (!num % 2)
+//         // jump to even
+//         goto even;
+//     else
+//         // jump to odd
+//         goto odd;
+// even:
+//     printf("%d is even", num);
+//     // return if even
+//     return;
+// odd:
+//     printf("%d is odd", num);
+//     return 0;
+//}
+
+// LAB-2
+//  #include<stdio.h>
+//  int main()
+//  {
+//      char c;
+//      printf("Enter alphabet: ");
+//      scanf("%c",&c);
+//      switch(c){
+//          case 'a':{
+//              printf("Vowel\n");
+//              break;
+//          }
+//              case 'e':{
+//              printf("Vowel\n");
+//              break;
+//          }
+//                  case 'i':{
+//              printf("Vowel\n");
+//              break;
+//          }
+//                  case 'o':{
+//              printf("Vowel\n");
+//              break;
+//          }
+//                  case 'u':{
+//              printf("Vowel\n");
+//              break;
+//          }
+//          default:{
+//              printf("Consonant\n");
+//              break;
+//          }
+//      }
+//      return 0;
+//  }
 
 // #include<stdio.h>
 // int main()
@@ -56,8 +88,6 @@ int main()
 //     return 0;
 // }
 
-
-
 // #include<stdio.h>
 // int main()
 // {
@@ -74,8 +104,6 @@ int main()
 //     return 0;
 // }
 
-
-
 // #include<stdio.h>
 // int main()
 // {
@@ -85,4 +113,3 @@ int main()
 
 //     return 0;
 // }
-
