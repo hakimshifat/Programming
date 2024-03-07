@@ -1,4 +1,20 @@
 // #include<stdio.h>
+// int main()
+// {
+//     int number,sum = 1;
+//     printf("Enter Number: ");
+//     scanf("%d",&number);
+//     while(number){
+//         sum = sum * (number % 10);
+//         number /= 10;
+//     }
+//     printf("%d\n",sum);
+//     return 0;
+// }
+
+
+
+// #include<stdio.h>
 // #include<math.h>
 // int main() {
 //     int number, digit = 0, swapped;
@@ -52,19 +68,7 @@
 // }
 
 
-// #include<stdio.h>
-// int main()
-// {
-//     int number,sum = 0;
-//     printf("Enter Number: ");
-//     scanf("%d",&number);
-//     while(number){
-//         sum = sum + number % 10;
-//         number /= 10;
-//     }
-//     printf("%d\n",sum);
-//     return 0;
-// }
+
 
  
 
