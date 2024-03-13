@@ -17,6 +17,7 @@
 // #include<stdio.h>
 // #include<math.h>
 // int main() {
+
 //     int number, digit = 0, swapped;
 //     printf("Enter Number: ");
 //     scanf("%d", &number);

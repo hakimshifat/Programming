@@ -9,7 +9,6 @@ int main()
   while(t--){
     int A_count = 0, B_count = 0;
     string s; cin >> s; 
- //   cout << s<<endl;
     for (int i = 0; i < s.size(); i++)
     {
       if(s[i] == 'A'){
