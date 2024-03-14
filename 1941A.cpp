@@ -36,7 +36,7 @@ int main() {
 
         for(int i = 0;i<leftCoin.size();i++){
             for(int k=0;k<rightCoin.size();k++){
-                if(leftCoin[i] + rightCoin[k] < sum){
+                if(leftCoin[i] + rightCoin[k] <= sum){
                     result++;
                 }
             }
@@ -44,17 +44,6 @@ int main() {
         cout << result << endl;
         result = 0;
 
-        // below code is for seeing input insertion correctly
-
-        // for(int i=0;i<leftCoin.size();i++){
-        //     cout << leftCoin[i]<<" ";
-        // }
-        // cout << endl;
-        // for(int i=0;i<rightCoin.size();i++){
-        //     cout << rightCoin[i]<<" ";
-        // }
-
-        // cout << endl;
     }
 
     return 0;
