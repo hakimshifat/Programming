@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+//#include<windows.h>
 using namespace std;
 int main()
 {
@@ -27,6 +28,7 @@ int main()
                 cout << " ";
             }
             cout << i;
+            sleep(1);
         }
         cout << endl;
     }
