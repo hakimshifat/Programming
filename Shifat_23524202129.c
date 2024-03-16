@@ -238,7 +238,7 @@
 // #include<stdio.h>
 // int main()
 // {
-//     enum tahmidergf{Maria,Marjia,Shreya = 10,Rehnuma=9999999,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
+//     enum tahmidergf{Maria,Marjia,Shreya,Rehnuma=9999999,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
 //     enum tahmidergf a = Tahia;
 //     printf("%d\n",a);
 
