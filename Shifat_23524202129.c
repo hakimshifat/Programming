@@ -107,7 +107,7 @@
 
 
 //Swap first and last number and keep other intact
-
+/*Vs codes code runner can give error to this code. just add -lm before -o in your terminal while running this code. Or simply run this on codeblocks*/
 // #include<stdio.h>
 // #include<math.h>
 // int main() {
@@ -238,7 +238,7 @@
 // #include<stdio.h>
 // int main()
 // {
-//     enum tahmidergf{Maria,Marjia,Shreya,Rehnuma=9999999,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
+//     enum tahmidergf{Maria,Marjia,Shreya,Rehnuma,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
 //     enum tahmidergf a = Tahia;
 //     printf("%d\n",a);
 
