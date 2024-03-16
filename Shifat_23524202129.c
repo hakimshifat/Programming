@@ -105,7 +105,6 @@
 //     return 0;
 // }
 
-
 //Swap first and last number and keep other intact
 /*Vs codes code runner can give error to this code. just add -lm before -o in your terminal while running this code. Or simply run this on codeblocks*/
 // #include<stdio.h>

@@ -1,13 +1,32 @@
 #include<stdio.h>
-int main()
-{
-    int number,sum = 0;
+#include<math.h>
+int main() {
+
+    int number, digit = 0, swapped;
     printf("Enter Number: ");
-    scanf("%d",&number);
-    while(number>10){
-        sum = sum + number % 10;
+    scanf("%d", &number);
+   
+    int originalnumber = number;
+    int last = number % 10;
+   
+    while (number != 0) {
+        number /= 10;
+        digit++;
+    }
+    number = originalnumber;
+
+   while(number>10) {
         number /= 10;
     }
-    printf("%d\n",sum);
+    int first = number;
+
+    swapped  = last;
+    swapped *= (int) round(pow(10, digit-1));
+    swapped += originalnumber % ((int)round(pow(10, digit-1)));
+    swapped -= last;
+    swapped += first;
+
+    printf("%d\n", swapped);
+
     return 0;
 }
