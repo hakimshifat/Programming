@@ -1,3 +1,96 @@
+ // Pascals Triangle
+//  #include <stdio.h>
+// int main() {
+//     int rows, number = 1;;
+//     printf("Enter the number of rows: ");
+//     scanf("%d", &rows);
+
+//     for (int i = 0; i < rows; i++) {
+//         for (int space = 1; space < rows - i; space++){
+//             printf("  ");
+//         }
+//         for (int j = 0; j <= i; j++) {
+//             if (j > 0){
+//                 number = number * (i - j + 1) / j;
+//             }
+//             printf("%4d", number);
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+// Fibonacci Series
+
+
+// #include <stdio.h>
+
+// int main() {
+//     int limit, a = 0, b = 1, c;
+    
+//     printf("Print Fibonacci series until: ");
+//     scanf("%d", &limit);
+
+//     printf("%d %d ", a, b);
+    
+//     c = a + b;
+//     while (c < limit) {
+//         printf("%d ", c);
+//         a = b;
+//         b = c;
+//         c = a + b;
+//     }
+//     printf("\n");
+    
+//     return 0;
+// }
+
+
+// Prime Number
+
+
+// #include<stdio.h>
+// int main(){
+//     int n, c = 0;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     for (int i = 1; i <= n; i++)
+//     {
+//         if(n%i == 0){
+//             c++;
+//         }
+//     }
+//     if(c <= 2){
+//         printf("\n%d is Prime Number\n",n);
+//     }
+//     else{
+//         printf("\n%d is not Prime Number\n");
+//     }
+    
+
+//     return 0;
+// }
+
+//Sum of last and first digit
+// #include<stdio.h>
+// int main()
+// {
+//     int number,FirstNum,lastNum,sum = 1;
+//     printf("Enter Number: ");
+//     scanf("%d",&number);
+//     lastNum = number % 10; 
+//     while(number){
+//         FirstNum = number % 10;
+//         number /= 10;
+//     }
+//     printf("%d\n",FirstNum+lastNum);
+//     return 0;
+// }
+
+
+//Product of digit of numbers
+
 // #include<stdio.h>
 // int main()
 // {
@@ -13,6 +106,7 @@
 // }
 
 
+//Swap first and last number and keep other intact
 
 // #include<stdio.h>
 // #include<math.h>
@@ -47,6 +141,8 @@
 //     return 0;
 // }
 
+//1+11+111+1111 series and its sum
+
 // #include <stdio.h>
 
 // int main() {
@@ -68,60 +164,6 @@
 //     return 0;
 // }
 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// #include <stdio.h>
-
-// int main() {
-//     int n;
-//     printf("Enter the number of terms: ");
-//     scanf("%d", &n);
-
-//     int sum = 0;
-//     int term = 0;
-//     for (int i = 0; i < n; ++i) {
-//         term = term * 10 + 1; // Generating the next term in the series
-//         sum += term; // Adding the term to the sum
-//     }
-
-//     printf("The sum of the series is: %d\n", sum);
-
-//     return 0;
-// }
-
-// #include <stdio.h>
-// int main()
-// {
-//     int num = 26;
-//     if (!num % 2)
-//         // jump to even
-//         goto even;
-//     else
-//         // jump to odd
-//         goto odd;
-// even:
-//     printf("%d is even", num);
-//     // return if even
-//     return;
-// odd:
-//     printf("%d is odd", num);
-//     return 0;
-//}
 
 // LAB-2
 //  #include<stdio.h>
@@ -175,6 +217,7 @@
 //     return 0;
 // }
 
+
 // #include<stdio.h>
 // int main()
 // {
@@ -191,11 +234,12 @@
 //     return 0;
 // }
 
+
 // #include<stdio.h>
 // int main()
 // {
 //     enum tahmidergf{Maria,Marjia,Shreya = 10,Rehnuma=9999999,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
-//     enum tahmidergf a = Saima;
+//     enum tahmidergf a = Tahia;
 //     printf("%d\n",a);
 
 //     return 0;
