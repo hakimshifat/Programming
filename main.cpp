@@ -17,7 +17,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cout << "working";
+    
     
     return 0;
 }
