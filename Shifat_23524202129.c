@@ -50,32 +50,32 @@
 //Prime Number
 
 
-#include<stdio.h>
-int main(){
-    int n, c = 0;
-    printf("Enter a number: ");
-    scanf("%d",&n);
-    if( n == 0 || n == 1){
-    	printf("\n%d is not prime number",n);
-    }
-    else{
-    for (int i = 2; i <= n; i++)
-    {
-        if(n%i == 0){
-            c++;
-        }
-    }
-    if(c <= 2){
-        printf("\n%d is Prime Number\n",n);
-    }
-    else{
-        printf("\n%d is not Prime Number\n",n);
-    }
-}
+// #include<stdio.h>
+// int main(){
+//     int n, c = 0;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     if( n == 0 || n == 1){
+//     	printf("\n%d is not prime number",n);
+//     }
+//     else{
+//     for (int i = 2; i <= n; i++)
+//     {
+//         if(n%i == 0){
+//             c++;
+//         }
+//     }
+//     if(c <= 2){
+//         printf("\n%d is Prime Number\n",n);
+//     }
+//     else{
+//         printf("\n%d is not Prime Number\n",n);
+//     }
+// }
     
 
-    return 0;
-}
+//     return 0;
+// }
 
 //Sum of last and first digit
 // #include<stdio.h>
