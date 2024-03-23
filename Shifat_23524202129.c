@@ -239,14 +239,3 @@
 //     }while(i<20);
 //     return 0;
 // }
-
-
-// #include<stdio.h>
-// int main()
-// {
-//     enum tahmidergf{Maria,Marjia,Shreya,Rehnuma,Saima,Faiza,Anika,Mehar,Tuly,Tahia,Shammi};
-//     enum tahmidergf a = Tahia;
-//     printf("%d\n",a);
-
-//     return 0;
-// }
