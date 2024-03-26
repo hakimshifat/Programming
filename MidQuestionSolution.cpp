@@ -174,7 +174,8 @@ int main()
 		for(int j = 0;j<i;j++){
 			printf(" ");
 		}
-		for(int l = 0;l < n ; l++){
+		for(int l = 0;l < n ; l++) //where did you get l?
+  {
 			printf("*");
 		}
 		printf("\n");
