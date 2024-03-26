@@ -355,5 +355,98 @@ int main()
 	return 0;
 }
 
-*/
 
+
+
+
+
+
+
+Adding two matrix while taking row and colum as user input:
+
+
+
+#include<stdio.h>
+int main()
+{
+	int r , c;
+	printf("Enter Row and Colum: ");
+	scanf("%d %d",&r, &c);
+
+	int arr1[r][c];
+	int arr2[r][c];
+	int arr3[r][c];
+
+	printf("Enter First Matrix\n");
+	for(int i = 1; i<=r ; i++){
+		for(int j = 1; j<=c ;j++){
+			printf("Array1[%d][%d]:",i,j);
+			scanf("%d",&arr1[i][j]);
+		}
+	}
+
+for(int i = 1; i<=r ; i++){
+		for(int j = 1; j<=c ;j++){
+			printf("Array1[%d][%d]",i,j);
+			scanf("%d",&arr2[i][j]);
+		}
+	}
+
+for(int i = 1; i<=r ; i++){
+		for(int j = 1; j<=c ;j++){
+			arr3[i][j] = arr1[i][j] + arr2[i][j];
+		}
+	}
+
+	printf("Resulting Matrix\n");
+
+	for(int i = 1; i<=r ; i++){
+		printf("\n");
+		for(int j = 1; j<=c ;j++){
+			printf("%d\t",arr3[i][j]);
+		}
+	}
+	
+	return 0;
+}
+
+
+
+ArmStrong Number taking input from user:
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int num;
+    int count = 0, digit = 0, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    int temp = num;
+
+	while(temp){
+		temp /= 10;
+		count++;
+	}
+
+	temp = num;
+    
+	while (temp) {
+        digit = temp % 10;
+        sum += pow(digit, count);
+		temp /= 10;
+    }
+
+    if (sum == num) {
+        printf("Armstrong!");
+    } else {
+        printf("Beda weak!");
+    }
+
+    return 0;
+}
+
+*/
