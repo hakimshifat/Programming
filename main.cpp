@@ -17,6 +17,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
- 
+    cout <<" works ";
+    
     return 0;
 }
