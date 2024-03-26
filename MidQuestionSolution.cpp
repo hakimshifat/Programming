@@ -37,7 +37,7 @@ int main(){ // M of main will always be lowercased
 	
 	scanf("%d",&a); // scanf only contain format specifier. And address pointer '&' was missing
 	
-	sum += 5; // '=+' is not a function. it will be '+='
+	sum = +5; // this function is correct. Basically assigning positive 5 into sum 
 	
 	printf("%d %d",a+b,sum); // f was missing from printf
 }
