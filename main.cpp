@@ -17,7 +17,18 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cout <<" works ";
-    
+    int n ; cin >> n;
+
+    for(int i = 0;i < n;i++){
+        for(int l = 0;l<i;l++){
+       //     if(l != 0){
+            printf(" ");
+      //  }
+        }
+        for(int j = 0;j<n;j++){
+        printf("*");
+    }
+    printf("\n");
+    }
     return 0;
 }

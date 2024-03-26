@@ -1,0 +1,1 @@
+foo_function();//2
