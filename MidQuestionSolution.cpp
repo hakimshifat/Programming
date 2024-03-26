@@ -40,6 +40,8 @@ int main(){ // M of main will always be lowercased
 	sum = +5; // this function is correct. Basically assigning positive 5 into sum 
 	
 	printf("%d %d",a+b,sum); // f was missing from printf
+
+  	return 0; // return call was missing
 }
 
 
